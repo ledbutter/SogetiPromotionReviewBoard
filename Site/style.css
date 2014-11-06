@@ -1,0 +1,16 @@
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.mainPoint {
+    opacity:0;
+    -webkit-animation:fadeIn ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;
+    -webkit-animation-duration:1s;
+}
+
+.mainPoint:first-of-type {
+     -webkit-animation-delay: 0.5s;   
+}
+.mainPoint:nth-of-type(2) {
+     -webkit-animation-delay: 1.0s;   
+}
