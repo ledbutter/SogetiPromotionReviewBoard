@@ -15,10 +15,10 @@ app.get('/', function(req, res) {
 app.post('/GetPage', function(req, res) {
 	var pageNumber = req.body.pageNumber;
 	var contents = new pc(pageNumber);
+	console.log("Serving content for: " + contents.title);
 	res.send(contents);
 });
 
-var server = app.listen(8080, function() {
-	
+var server = app.listen(8085, function() {
 	console.log("Now running Sven's CMB Single Page Web Application");
 });

@@ -7,24 +7,10 @@
 	var ns = this.callerNamespace;
 	var pageCount = 3;
 	var currentPage = 1;
-	var $prevPage, $nextPage;
 
 	ns.initialize = function () {
-
-		$prevPage = $('#prevPage');
-		$nextPage = $('#nextPage');
-	
 		getPage(currentPage);
 		
-		$prevPage.prop("disabled", true);
-
-		$nextPage.click(function () {
-			getNextPage();
-		});
-
-		$prevPage.click(function () {
-			getPreviousPage();
-		});
 		$(document).keyup(function (e) {
 			switch (e.keyCode) {
 			case 39:
@@ -40,15 +26,11 @@
 	
 	function getPreviousPage() {
 		currentPage -= 1;
-		$prevPage.prop("disabled", currentPage === 1);
-		$nextPage.prop("disabled", false);
 		getPage(currentPage);
 	}
 	
 	function getNextPage() {
 		currentPage += 1;
-		$nextPage.prop("disabled", pageCount === currentPage);
-		$prevPage.prop("disabled", false);
 		getPage(currentPage);
 	}
 
@@ -64,6 +46,8 @@
 		}).done(function (data, textStatus, jqXHR) {
 			$('h2').empty();
 			$('h2').append(data.title);
+			$('h3').empty();
+			$('h3').append(data.description);
 			var $pc = $('#pageContent');
 			$pc.empty();
 			var $mainUl = $('<ul class="points">');
