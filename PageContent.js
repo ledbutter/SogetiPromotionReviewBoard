@@ -41,7 +41,7 @@ var PageContent = function (pageNumber) {
             this.title = "Delivery Excellence";
 						this.description = "As a trusted advisor, consistently delivering exemplary service to our clients by executing the Sogeti Delivery model/best practices (differentiators, tools, processes, methods), implementing an appropriate level of risk and delivering on financial commitments to achieve profitability. Incorporates all project management & control best practices.";
             this.contents[0] = new MainPoint("Sogeti Security Certification", []);
-            this.contents[1] = new MainPoint("Main Point 2", ["Sub Point 2.1", "Sub Point 2.2", "Sub Point 2.3"]);
+            this.contents[1] = new MainPoint("Adapting to Client Needs", ["Classic ASP/C++", "Linux/Perl/PHP", "ASP.NET Web Forms/MVC"]);
             break;
 		case 7:
             this.title = "Leadership";
