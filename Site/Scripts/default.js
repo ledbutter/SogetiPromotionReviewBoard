@@ -6,7 +6,7 @@
 	this.callerNamespace = this.callerNamespace || {};
 	var ns = this.callerNamespace;
 	var pageCount = 3;
-	var currentPage = 1;
+	var currentPage = 0;
 	var pageData = null;
 	var currentPoint = 0;
 
@@ -63,7 +63,10 @@
 		$mainul.eq($mainul.length - 1).remove();
 	}
 	
-	function retrievePage() {
+	function retrievePage(next) {
+		currentPage = next ? currentPage + 1 : currentPage - 1;
+		currentPoint = 0;
+		
 		$.ajax({
 				url : '/GetPage',
 				type : 'POST',
@@ -79,10 +82,6 @@
 				$('h3').empty();
 				$('h3').append(pageData.description);
 				$('#pageContent').empty();
-				
-				if (pageData.contents.length > 0){
-					currentPoint = 0;
-				}
 			}).fail(function (jqXHR, textStatus, errorThrown) {
 				console.log("Error: " + jqXHR.responseText);
 			}).always(function () {
@@ -97,8 +96,7 @@
 				currentPoint++;
 			} 
 			else {
-				retrievePage();
-				currentPage++;
+				retrievePage(nextPoint);
 			}
 		} 
 		else {
@@ -107,8 +105,7 @@
 				removePoint();
 			} 
 			else {
-				currentPage--;
-				retrievePage();
+				retrievePage(nextPoint);
 			}
 		}
 	};
