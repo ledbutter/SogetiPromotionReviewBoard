@@ -7,9 +7,11 @@
 	var ns = this.callerNamespace;
 	var pageCount = 3;
 	var currentPage = 1;
+	var pageData = null;
+	var currentPoint = 0;
 
 	ns.initialize = function () {
-		getPage(currentPage);
+		getPage(true);
 		
 		$(document).keyup(function (e) {
 			switch (e.keyCode) {
@@ -25,50 +27,89 @@
 	};
 	
 	function getPreviousPage() {
-		currentPage -= 1;
-		getPage(currentPage);
+		getPage(false);
 	}
 	
 	function getNextPage() {
-		currentPage += 1;
-		getPage(currentPage);
+		getPage(true);
 	}
 
-	function getPage(pageNumber) {
-		$.ajax({
-			url : '/GetPage',
-			type : 'POST',
-			contentType : 'application/json; charset=utf-8',
-			dataType : 'json',
-			data : JSON.stringify({
-				pageNumber : pageNumber
-			})
-		}).done(function (data, textStatus, jqXHR) {
-			$('h2').empty();
-			$('h2').append(data.title);
-			$('h3').empty();
-			$('h3').append(data.description);
-			var $pc = $('#pageContent');
+	function addPoint() {
+		var $pc = $('#pageContent');
+		var $mainul = null;
+		if (currentPoint === 0){
 			$pc.empty();
-			var $mainUl = $('<ul class="points">');
-			$.each(data.contents, function (_, mp) {
-				var $li = $('<li class="mainPoint">' + mp.main + '</li>');
-				if (mp.subPoints.length) {
-					var $ul = $('<ul>');
-					$.each(mp.subPoints, function (_, sp) {
-						$ul.append('<li class="subPoint">' + sp + '</li>');
-					});
-					$li.append($ul);
-				}
-				$mainUl.append($li);
+			$mainul = $('<ul class="points">');
+		} else {
+			$mainul = $('ul.points');
+		}
+		var $li = $('<li class="mainpoint">' + pageData.contents[currentPoint].main + '</li>');
+		if (pageData.contents[currentPoint].subPoints.length > 0) {
+			var $ul = $('<ul>');
+			$.each(pageData.contents[currentPoint].subPoints, function (_, sp) {
+				$ul.append('<li class="subpoint">' + sp + '</li>');
 			});
-			$mainUl.append('</ul>');
-			$pc.append($mainUl);
-
-		}).fail(function (jqXHR, textStatus, errorThrown) {
-			console.log("Error: " + jqXHR.responseText);
-		}).always(function () {
-			console.log("Done!");
-		});
+			$li.append($ul);
+		}
+		$mainul.append($li);
+		if (currentPoint === 0){
+			$mainul.append('</ul>');
+		}
+		$pc.append($mainul);
+	}
+	
+	function removePoint() {
+		var $mainul = $('ul.points > li');
+		$mainul.eq($mainul.length - 1).remove();
+	}
+	
+	function retrievePage() {
+		$.ajax({
+				url : '/GetPage',
+				type : 'POST',
+				contentType : 'application/json; charset=utf-8',
+				dataType : 'json',
+				data : JSON.stringify({
+					pageNumber : currentPage
+				})
+			}).done(function (data, textStatus, jqXHR) {
+				pageData = data;
+				$('h2').empty();
+				$('h2').append(pageData.title);
+				$('h3').empty();
+				$('h3').append(pageData.description);
+				$('#pageContent').empty();
+				
+				if (pageData.contents.length > 0){
+					currentPoint = 0;
+				}
+			}).fail(function (jqXHR, textStatus, errorThrown) {
+				console.log("Error: " + jqXHR.responseText);
+			}).always(function () {
+				console.log("Done!");
+			});
+	}
+	
+	function getPage(nextPoint) {
+		if (nextPoint){
+			if (pageData != null && currentPoint < pageData.contents.length) {
+				addPoint();
+				currentPoint++;
+			} 
+			else {
+				retrievePage();
+				currentPage++;
+			}
+		} 
+		else {
+			if (pageData != null && currentPoint > 0) {
+				currentPoint--;
+				removePoint();
+			} 
+			else {
+				currentPage--;
+				retrievePage();
+			}
+		}
 	};
 })();
