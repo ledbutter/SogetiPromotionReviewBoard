@@ -4,6 +4,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 
+var port = process.env.PORT || 8085;
 app.set('view engine', 'jade');
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/Site')));
@@ -19,6 +20,6 @@ app.post('/GetPage', function(req, res) {
 	res.send(contents);
 });
 
-var server = app.listen(8085, function() {
+var server = app.listen(port, function() {
 	console.log("Now running Sven's CMB Single Page Web Application");
 });
