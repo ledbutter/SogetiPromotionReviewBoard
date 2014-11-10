@@ -18,7 +18,7 @@ var PageContent = function (pageNumber) {
             this.title = "Summary of CMB Case";
             this.contents[0] = new MainPoint("Client Work", ["OTACE", "Client Manager Recommendation"]);
             this.contents[1] = new MainPoint("Unit/Practice Work", ["Training", "Counseling", "Social Committee", "Side Work"]);
-						this.contents[2] = new MainPoint("Certifications", ["Microsoft", "Sogeti"]);
+			this.contents[2] = new MainPoint("Certifications", ["Microsoft", "Sogeti"]);
             break;
         case 3:
             this.title = "Client Delight";
@@ -87,29 +87,39 @@ var PageContent = function (pageNumber) {
             break;
 		case 13:
             this.title = "PDP";
-            this.contents[0] = new MainPoint("Main Point 1", ["Sub Point 1.1", "Sub Point 1.2"]);
-            this.contents[1] = new MainPoint("Main Point 2", ["Sub Point 2.1", "Sub Point 2.2", "Sub Point 2.3"]);
+            this.contents[0] = new MainPoint("Long Term", ["Participate in Pursuit", "Next Certification"]);
+            this.contents[1] = new MainPoint("Short Term", ["Pursuit Certification Test/Interview", "Promotion to Manager Consultant..."]);
             break;
 		case 14:
             this.title = "IBP";
-            this.contents[0] = new MainPoint("2014", ["386.84", "IV"]);
+            this.contents[0] = new MainPoint("2014", ["386.84", "IV", "20 GVP", "28 PVP"]);
             this.contents[1] = new MainPoint("2013", ["IV"]);
             break;
 		case 15:
             this.title = "Skills/Competencies";
-            this.contents[0] = new MainPoint("Main Point 1", ["Sub Point 1.1", "Sub Point 1.2"]);
-            this.contents[1] = new MainPoint("Main Point 2", ["Sub Point 2.1", "Sub Point 2.2", "Sub Point 2.3"]);
+            this.contents[0] = new MainPoint("39 Listeed", ["Updated November 7th"]);
+			this.contents[1] = new MainPoint("Latest Additions", ["Azure", "F#", ".NET 4.5.1"]);
             break;
-		case 15:
+		case 16:
             this.title = "Profile";
-            this.contents[0] = new MainPoint("Main Point 1", ["Sub Point 1.1", "Sub Point 1.2"]);
-            this.contents[1] = new MainPoint("Main Point 2", ["Sub Point 2.1", "Sub Point 2.2", "Sub Point 2.3"]);
+            this.contents[0] = new MainPoint("Updated Last Week", []);
+            this.contents[1] = new MainPoint("<img src='Images/Profile.png' alt='Profile Screnshot'/>", []);
             break;
-		case 15:
+		case 17:
             this.title = "Recommendation Letter";
-            this.contents[0] = new MainPoint("Main Point 1", ["Sub Point 1.1", "Sub Point 1.2"]);
-            this.contents[1] = new MainPoint("Main Point 2", ["Sub Point 2.1", "Sub Point 2.2", "Sub Point 2.3"]);
+			this.contents[0] = new MainPoint("Jeff Gehling", ["Client Manager at Thomson Reuters for 3 years"]);
+            this.contents[1] = new MainPoint("It is with great pleasure that I recommend Sven Grosen for the promotion to Manager Consultant.  Sven has been working for me as a developer on multiple projects for over the last three years during which time he has always met or exceeded my expectations.  ", []);
+            this.contents[2] = new MainPoint("The team finds Sven's personality, positive attitude, and eagerness to jump in and create solutions to be great assets that drive them to be highly motivated and performance-minded.  Sven is a leader on the team and a great asset.", []);
             break;
+		case 18:
+			this.title = "My Presentation";
+			this.contents[0] = new MainPoint("I'm a single page web application", []);
+			this.contents[1] = new MainPoint("Build using only HTML, CSS, and JavaScript", []);
+			this.contents[2] = new MainPoint("Even the server is being run by NodeJS", []);
+			break;
+		case 19:
+			this.title = "Thank You for Your Time and Consideration";
+			break;
         default:
             this.title = "Unknown";
             break;

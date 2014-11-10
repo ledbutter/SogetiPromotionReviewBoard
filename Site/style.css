@@ -33,3 +33,7 @@ footer {
 	position: relative;
 	padding-top: 50px;
 }
+
+img[src='Images/Profile.png']{
+	height: 500px;
+}
