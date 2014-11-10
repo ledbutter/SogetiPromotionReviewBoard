@@ -28,8 +28,8 @@ var PageContent = function (pageNumber) {
 		case 4:
             this.title = "Productivity";
 			this.description = "This reflects the total effort put forth by the consultant. The goal for all Consultants is to remain fully utilized with their contributions to the client as well as to the unit. URVE (Utilization Rate Vacation Excluded) is just one dial of measurement we use in this category: Utilization Rate. It is simply the ratio of hours billed to available hours (less PTO).";
-            this.contents[0] = new MainPoint("Utilization", []);
-            this.contents[1] = new MainPoint("Client Committment", []);
+            this.contents[0] = new MainPoint("Utilization", ["URVE: 98.89"]);
+            this.contents[1] = new MainPoint("Client Committment", ["36 hours 1H 2014"]);
             break;
 		case 5:
             this.title = "Business Development";
@@ -58,8 +58,8 @@ var PageContent = function (pageNumber) {
 		case 9:
             this.title = "Consultative & Professional Skills";
 			this.description = "Exhibits professionalism and professional behavior at all times, complies with Sogeti and client policies and procedures. Able to make a positive first impression, inspiring trust, credibility, and confidence with the client and peers. Has strong professional work ethics. Has solid foundation of IT analytical skills, relevant talents, and productivity abilities.";
-            this.contents[0] = new MainPoint("Main Point 1", ["Sub Point 1.1", "Sub Point 1.2"]);
-            this.contents[1] = new MainPoint("Main Point 2", ["Sub Point 2.1", "Sub Point 2.2", "Sub Point 2.3"]);
+            this.contents[0] = new MainPoint("My Beliefs", ["Strive to always behave professionally", "Constant improvement is to be expected"]);
+            this.contents[1] = new MainPoint("Counselor Appraisal Notes", ["Modest demeanor that is confident to the client", "Very professional"]);
             break;
 		case 10:
             this.title = "Practice & Industry Expertise";
@@ -75,8 +75,15 @@ var PageContent = function (pageNumber) {
             break;
 		case 12:
             this.title = "Performance Appraisal";
-            this.contents[0] = new MainPoint("Main Point 1", ["Sub Point 1.1", "Sub Point 1.2"]);
-            this.contents[1] = new MainPoint("Main Point 2", ["Sub Point 2.1", "Sub Point 2.2", "Sub Point 2.3"]);
+            this.contents[0] = new MainPoint("Client Delight (Target: 4)", ["Self: 4", "Counselor: 4"]);
+            this.contents[1] = new MainPoint("Productivity (Target: 4)", ["Self: 3", "Counselor: 3"]);
+			this.contents[2] = new MainPoint("Business Development (Target: 3)", ["Self: 3", "Counselor: 3"]);
+			this.contents[3] = new MainPoint("Leadership (Target: 3)", ["Self: 3", "Counselor: 4"]);
+			this.contents[4] = new MainPoint("Delivery Excellence (Target: 3)", ["Self: 3", "Counselor: 3"]);
+			this.contents[5] = new MainPoint("Sogeti Contributions (Target: 3)", ["Self: 3", "Counselor: 4"]);
+			this.contents[6] = new MainPoint("Consultative & Professional Skills (Target: 4)", ["Self: 4", "Counselor: 4"]);
+			this.contents[7] = new MainPoint("Professional Community (Target: 3)", ["Self: 3", "Counselor: 3"]);
+			this.contents[8] = new MainPoint("Practice & Industry Expertise (Target: 3)", ["Self: 4", "Counselor: 4"]);
             break;
 		case 13:
             this.title = "PDP";
@@ -85,8 +92,8 @@ var PageContent = function (pageNumber) {
             break;
 		case 14:
             this.title = "IBP";
-            this.contents[0] = new MainPoint("Main Point 1", ["Sub Point 1.1", "Sub Point 1.2"]);
-            this.contents[1] = new MainPoint("Main Point 2", ["Sub Point 2.1", "Sub Point 2.2", "Sub Point 2.3"]);
+            this.contents[0] = new MainPoint("2014", ["386.84", "IV"]);
+            this.contents[1] = new MainPoint("2013", ["IV"]);
             break;
 		case 15:
             this.title = "Skills/Competencies";
