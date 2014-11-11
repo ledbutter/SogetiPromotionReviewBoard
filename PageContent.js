@@ -11,8 +11,6 @@ var PageContent = function (pageNumber) {
     switch (this.pageNumber) {
         case 1:
             this.title = "CMB 2014";
-            this.contents[0] = new MainPoint("Sven Grosen", []);
-            this.contents[1] = new MainPoint("Promotion to Manager Consultant", []);
             break;
         case 2:
             this.title = "Summary of CMB Case";
@@ -54,6 +52,7 @@ var PageContent = function (pageNumber) {
 			this.description = "It's incumbent for all Sogeti family members to contribute to the success of the unit, peers, and the company. There are many direct and intangible contributions which you can make. This area captures these items. Included in this section are the community & social activities that build company loyalty, good morale, and fun working environment.";
             this.contents[0] = new MainPoint("Counseling", []);
             this.contents[1] = new MainPoint("Social Committee", ["Summer Picnic"]);
+			this.contents[2] = new MainPoint("Side Work", ["Windows 8 Tablet App"]);
             break;
 		case 9:
             this.title = "Consultative & Professional Skills";
@@ -64,7 +63,7 @@ var PageContent = function (pageNumber) {
 		case 10:
             this.title = "Practice & Industry Expertise";
 			this.description = "Demonstrating broad understanding of the technology market and excellence in at least one relevant technology, building additional areas of expertise as appropriate.  Taking a strategic vision and tactical interest and involvement in technology innovation to help Sogeti grow.   Active participation and contribution to your Practice or Vertical.";
-            this.contents[0] = new MainPoint("Microsoft Certifications", ["70-515", "70-480", "70-486", "70-487"]);
+            this.contents[0] = new MainPoint("Microsoft Certifications", ["70-515", "70-480", "70-486", "70-487", "MCSD in Web Applications"]);
             this.contents[1] = new MainPoint("This Presentation...", []);
             break;
 		case 11:
@@ -75,15 +74,15 @@ var PageContent = function (pageNumber) {
             break;
 		case 12:
             this.title = "Performance Appraisal";
-            this.contents[0] = new MainPoint("Client Delight (Target: 4)", ["Self: 4", "Counselor: 4"]);
-            this.contents[1] = new MainPoint("Productivity (Target: 4)", ["Self: 3", "Counselor: 3"]);
-			this.contents[2] = new MainPoint("Business Development (Target: 3)", ["Self: 3", "Counselor: 3"]);
-			this.contents[3] = new MainPoint("Leadership (Target: 3)", ["Self: 3", "Counselor: 4"]);
-			this.contents[4] = new MainPoint("Delivery Excellence (Target: 3)", ["Self: 3", "Counselor: 3"]);
-			this.contents[5] = new MainPoint("Sogeti Contributions (Target: 3)", ["Self: 3", "Counselor: 4"]);
-			this.contents[6] = new MainPoint("Consultative & Professional Skills (Target: 4)", ["Self: 4", "Counselor: 4"]);
-			this.contents[7] = new MainPoint("Professional Community (Target: 3)", ["Self: 3", "Counselor: 3"]);
-			this.contents[8] = new MainPoint("Practice & Industry Expertise (Target: 3)", ["Self: 4", "Counselor: 4"]);
+            this.contents[0] = new MainPoint("Client Delight (Target: 4)", ["Self: 4; Counselor: 4"]);
+            this.contents[1] = new MainPoint("Productivity (Target: 4)", ["Self: 3; Counselor: 3"]);
+			this.contents[2] = new MainPoint("Business Development (Target: 3)", ["Self: 3; Counselor: 3"]);
+			this.contents[3] = new MainPoint("Leadership (Target: 3)", ["Self: 3; Counselor: 4"]);
+			this.contents[4] = new MainPoint("Delivery Excellence (Target: 3)", ["Self: 3; Counselor: 3"]);
+			this.contents[5] = new MainPoint("Sogeti Contributions (Target: 3)", ["Self: 3; Counselor: 4"]);
+			this.contents[6] = new MainPoint("Consultative & Professional Skills (Target: 4)", ["Self: 4; Counselor: 4"]);
+			this.contents[7] = new MainPoint("Professional Community (Target: 3)", ["Self: 3; Counselor: 3"]);
+			this.contents[8] = new MainPoint("Practice & Industry Expertise (Target: 3)", ["Self: 4; Counselor: 4"]);
             break;
 		case 13:
             this.title = "PDP";

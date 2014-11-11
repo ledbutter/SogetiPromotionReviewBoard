@@ -52,6 +52,7 @@
 			$li.append($ul);
 		}
 		$mainul.append($li);
+		$li.fadeIn('slow');
 		if (currentPoint === 0){
 			$mainul.append('</ul>');
 		}
