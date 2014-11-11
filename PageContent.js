@@ -53,7 +53,6 @@ var PageContent = function (pageNumber) {
             this.contents[0] = new MainPoint("Counseling", []);
             this.contents[1] = new MainPoint("Social Committee", ["Summer Picnic"]);
 			this.contents[2] = new MainPoint("Side Work", ["Windows 8 Tablet App"]);
-			this.contents[2] = new MainPoint("Side Work", ["Windows 8 Table App"]);
             break;
 		case 9:
             this.title = "Consultative & Professional Skills";
