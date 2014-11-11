@@ -52,7 +52,11 @@ var PageContent = function (pageNumber) {
 			this.description = "It's incumbent for all Sogeti family members to contribute to the success of the unit, peers, and the company. There are many direct and intangible contributions which you can make. This area captures these items. Included in this section are the community & social activities that build company loyalty, good morale, and fun working environment.";
             this.contents[0] = new MainPoint("Counseling", []);
             this.contents[1] = new MainPoint("Social Committee", ["Summer Picnic"]);
+<<<<<<< HEAD
 			this.contents[2] = new MainPoint("Side Work", ["Windows 8 Tablet App"]);
+=======
+			this.contents[2] = new MainPoint("Side Work", ["Windows 8 Table App"]);
+>>>>>>> abc07f90626138aae0a23225a9ce598ab3812ceb
             break;
 		case 9:
             this.title = "Consultative & Professional Skills";
@@ -115,6 +119,7 @@ var PageContent = function (pageNumber) {
 			this.contents[0] = new MainPoint("I'm a single page web application", []);
 			this.contents[1] = new MainPoint("Build using only HTML, CSS, and JavaScript", []);
 			this.contents[2] = new MainPoint("Even the server is being run by NodeJS", []);
+			this.contents[3] = new MainPoint("And it is hosted in Azure!", ["http://svenpromotionpresentation.azurewebsites.net/"]);
 			break;
 		case 19:
 			this.title = "Thank You for Your Time and Consideration";
